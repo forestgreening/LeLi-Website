@@ -1,0 +1,102 @@
+body {
+  overflow-x: hidden;
+  background: black;
+}
+.not-scroll {
+  overflow: hidden;
+}
+
+#two-types {
+  position: relative;
+  display: table;
+  z-index: 1;
+}
+#two-types .inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+}
+
+#two-types article {
+  display: inline-block;
+  width: 300px;
+  height: 250px;
+  background-color: black;
+  color: white;
+  border: white solid 1px;
+  border-radius: 5px;
+  margin-left: 500px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.5s;
+  transform: translateY(3%);
+  box-sizing: border-box;
+  padding: 20px;
+}
+#two-types article h3 {
+  font-size: 25px;
+}
+#two-types article p {
+  margin-top: 30px;
+  font-size: 15px;
+  line-height: 1.6em;
+  text-align: left;
+}
+#two-types article.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#two-types article:first-child {
+  margin-left: 0;
+}
+
+#intro-section {
+  position: relative;
+  font-size: 0;
+}
+#btn-scroll {
+  width: 18px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+#btn-skip {
+  width: 46px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.started #btn-scroll {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.started #btn-skip {
+  opacity: 1;
+  pointer-events: initial;
+}
+.started.end #btn-skip {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn-intro {
+  position: absolute;
+  width: 18px;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+}
+.btn-intro img {
+  width: 100%;
+  height: auto;
+}
+
+.other-section {
+  min-height: 100vh;
+}
+.other-section:nth-child(2n) {
+  background-color: #222;
+}

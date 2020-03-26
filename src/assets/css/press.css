@@ -1,0 +1,132 @@
+.press__main {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.press__section {
+  height: 100%;
+}
+
+.press__container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 17vh;
+  text-align: center;
+}
+
+.press__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 21px;
+  color: white;
+  margin-bottom: 9vh;
+}
+
+.press__box-left,
+.press__box-right {
+  width: 780px;
+  height: 570px;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.press__box-left-imgbox {
+  width: 680px;
+  height: 443px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+  background: url("https://f1.hkbnews.com/2019/09/63klq9ml89.jpg") no-repeat;
+  background-size: 100%;
+}
+
+.press__box-left-textbox {
+  max-width: 580px;
+  height: 275px;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  background-color: black;
+  text-align: right;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.press__box-left-imgbox,
+.press__box-right-imgbox {
+  width: 680px;
+  height: 443px;
+}
+
+.press__box-left-textbox,
+.press__box-right-textbox {
+  width: 580px;
+  height: 275px;
+}
+
+/* .textbox__width {
+  width: 484px;
+  height: 126px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+} */
+
+.press__box-left-textbox-press,
+.press__box-right-textbox-press,
+.press__box-left-textbox-content,
+.press__box-right-textbox-content {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  color: white;
+}
+
+.press__box-left-textbox-content {
+  width: 450px;
+  display: inline-block;
+}
+
+.press__box-left-textbox-title,
+.press__box-right-textbox-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 21px;
+  color: white;
+}
+
+.press__box-left-textbox-more,
+.press__box-right-textbox-more {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 21px;
+  color: #262626;
+}
+
+.press__box-a-div {
+  width: 110px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.press__box-a-div2 {
+  width: 110px;
+  height: 100%;
+  text-align: center;
+  border-bottom: 1px solid #262626;
+}

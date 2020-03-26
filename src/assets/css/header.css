@@ -1,0 +1,77 @@
+.mainNav {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  padding: 0 60px;
+  /* background: rgba(0, 0, 0, 0.8); */
+}
+
+.mainNav__logo {
+  font-weight: 800;
+  letter-spacing: 1;
+  font-size: 24px;
+}
+
+.mainNav__links {
+  display: flex;
+}
+
+.noto {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.mainNav__link {
+  letter-spacing: 1;
+  font-size: 15px;
+  margin-left: 20px;
+  font-weight: 600;
+  padding: 2px 4px;
+  color: white;
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+}
+
+.underline {
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.underline:hover,
+.underline:focus {
+  outline: none;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.underline::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+  content: "";
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(10px);
+}
+
+.underline:hover::after,
+.underline:focus::after {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.contactBtn {
+  padding: 11px 21px;
+  background: #191919;
+  border-radius: 110px;
+}

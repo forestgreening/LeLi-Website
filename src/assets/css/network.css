@@ -1,0 +1,19 @@
+.network__container {
+  max-width: 100%;
+  height: 85vh;
+  background: url(./symbol/network/background-combine-lelit.png) no-repeat;
+  background-position: bottom;
+}
+
+.network__title {
+  margin-bottom: 50px;
+}
+
+.content__network {
+  margin-top: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.8);
+}

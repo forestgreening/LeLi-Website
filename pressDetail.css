@@ -1,0 +1,114 @@
+.pressDetail__main,
+.pressDetail__section {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pressDetail__title {
+  width: 490px;
+  margin: 0 auto;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 50px;
+  color: white;
+  margin-top: 15vh;
+}
+
+.pressDetail__pressInfo {
+  width: 350px;
+  margin: 5vh auto;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 33px;
+  color: #5e5e5e;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pressDetail__imgbox {
+  background: linear-gradient(black 50%, white 50%);
+}
+
+.pressDetail__textbox {
+  background: white;
+}
+
+.pressDetail__textContainer {
+  width: 780px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.pressDetail__text {
+  padding-top: 5vh;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  color: #262626;
+  text-align: left;
+}
+
+.pressDetail__linkbox {
+  padding-top: 7vh;
+  padding-bottom: 7vh;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+}
+
+.pressDetail__linkbox-link {
+  color: #262626;
+}
+
+.pressDetail__seeAllButtonBox {
+  height: 360px;
+  background-color: black;
+  padding-top: 5vh;
+}
+
+.pressDetail__seeAllButton {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    to right,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  background-size: 1000px 100%;
+  background-clip: text;
+
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+
+  animation: bg 15s linear infinite;
+}
+
+@keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: 10000px;
+  }
+}
+
+.pressDetail__footer {
+  margin-top: 27vh;
+}

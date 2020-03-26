@@ -1,0 +1,88 @@
+.tetraTx {
+  background-image: url(../../../symbol/tetratx/tetratx-background.png);
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  margin-top: 20vh;
+  padding-top: 15vh;
+}
+
+/* .content__column {
+  display: block;
+} */
+
+.content {
+  height: 100vh;
+  text-align: center;
+}
+
+.content__title {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 43px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.content__text {
+  color: white;
+  max-width: 765px;
+  margin: 0 auto;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.tetratx__text {
+  margin: 80px auto;
+}
+
+.content__link {
+  font-family: "Montserrat", sans-serif;
+  padding: 11px 21px;
+  width: 129px;
+  height: 43px;
+  border-radius: 110px;
+  position: relative;
+  background: black;
+  z-index: 4;
+}
+
+.content__link:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * 1px);
+  left: calc(-1 * 1px);
+  height: calc(100% + 1px * 2);
+  width: calc(100% + 1px * 2);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  border-radius: 110px;
+  z-index: -1;
+  animation: animategradient 1.5s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes animategradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

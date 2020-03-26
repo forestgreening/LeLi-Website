@@ -1,0 +1,63 @@
+.footer__container {
+  max-width: 1185px;
+  margin: 0 auto;
+}
+
+.footer__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__left {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__left-logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 33px;
+  color: white;
+  margin-right: 30px;
+}
+
+.footer__left-column {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
+  font-size: bold;
+  line-height: 50px;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.footer__right {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__column {
+  margin-top: 10px;
+}
+
+.footer__column-text {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.5;
+}
+
+.footer__column-copyright {
+  margin-top: 20px;
+  height: 10vh;
+  padding-top: 2vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 21px;
+  color: white;
+}

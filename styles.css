@@ -1,0 +1,52 @@
+@import "./reset.css";
+@import "./header.css";
+@import "./tetratx.css";
+@import "./contactus.css";
+@import "./network.css";
+@import "./wholeliare.css";
+@import "./footer.css";
+@import "./projects.css";
+@import "./press.css";
+@import "./pressDetail.css";
+@import "./intro.css";
+
+html,
+body {
+  height: 100%;
+  background-color: black;
+}
+
+.main__body {
+  background-color: black;
+}
+
+article {
+  max-width: 1185px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.content__text-lelius,
+.content__text-lelium,
+.content__text-lelimove,
+.content__text-leliarchi {
+  display: none;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}

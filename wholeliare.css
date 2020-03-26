@@ -1,0 +1,79 @@
+.wholeli__container {
+  background-image: url(./symbol/wholeli/wholeli_background.png);
+  /* background-color: cadetblue; */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.wholeli__wrapper {
+  height: 100%;
+  /* text-align: center; */
+}
+
+.wholeli__wrapper:before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  margin-right: 0;
+  vertical-align: middle;
+}
+
+.wholeli__container__box {
+  width: 780px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.content__box {
+  padding-top: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__who {
+  margin-top: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.5;
+}
+
+.content__name,
+.content__position {
+  margin-top: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 21px;
+  color: white;
+}
+
+.wholeli__title {
+  font-size: 36px;
+}
+
+.content__text-alan,
+.content__text-hesus {
+  margin-top: 2vh;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.wholeliare__column-alan {
+  text-align: left;
+}
+
+.wholeliare__column-hesus {
+  text-align: right;
+}
+
+.wholeliare__column {
+  display: block;
+}
