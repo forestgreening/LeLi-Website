@@ -109,12 +109,12 @@ void main() {
 
   vec3 c = rgb2hsv( vec3(finalMix.x,finalMix.y,finalMix.z) );
   if(cMix.w > 0.0){
-    c = hsv2rgb( vec3( noise(vTexCoord.st*3.0+c.z+time) * noise(vTexCoord.st*3.0-time) + time*0.05 , 1.0, c.z*tr + 1.0*(1.0-tr)) );
-    gl_FragColor = vec4(c, (c.z*(1.0-tr) + 1.0*tr)*(1.0-tr)  + cMix.w * tr);
+    c = hsv2rgb( vec3( noise(vTexCoord.st*3.0+c.z+time) * noise(vTexCoord.st*3.0-time) + time*0.05 , 1.0, c.z) );
+    gl_FragColor = vec4(c, (1.0-tr)  + cMix.w * tr);
   }
   else{
-    c = hsv2rgb( vec3( noise(vTexCoord.st*3.0+c.z+time) * noise(vTexCoord.st*3.0-time) + time*0.05 , 1.0-tr, c.z*tr + 1.0*(1.0-tr)) );
-    gl_FragColor = vec4(c, (c.z*(1.0-tr) + 1.0*tr)*(1.0-tr) + wMix.w * tr );
+    c = hsv2rgb( vec3( noise(vTexCoord.st*3.0+c.z+time) * noise(vTexCoord.st*3.0-time) + time*0.05 , 1.0-tr, c.z) );
+    gl_FragColor = vec4(c, (1.0-tr) + wMix.w * tr );
   }
   
 }`

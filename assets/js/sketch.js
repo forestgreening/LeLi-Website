@@ -12,8 +12,6 @@ var lineRatio = 1,
 var effectVal = 0;
 var effectValTarget = 1;
 var isLine = false;
-var particles = [];
-var effects = ["normal", "flicker", "wobble", "open", "connect"];
 
 var effectNum = 0;
 var isStarted = false;
@@ -22,11 +20,15 @@ var resizingSetting = {
   frameCount: 0,
   isResizing: false
 };
+var resolutionRatio = (innerWidth * innerHeight) / (1080 * 1920);
 
 document.getElementById("btn-skip").addEventListener("click", finishIntro);
 
 function startIntro() {
   document.getElementById("intro-section").classList.add("started");
+  document.querySelector("body").classList.add("not-scroll");
+  document.getElementById("intro-section").classList.remove("end");
+  isFinished = false;
 }
 function finishIntro() {
   document.querySelector("body").classList.remove("not-scroll");
@@ -41,7 +43,7 @@ function setup() {
   colorMask = createGraphics(width, height);
   whiteMask = createGraphics(width, height);
 
-  pg.perspective(PI / 5.0, width / height, 0.1, 3000);
+  pg.perspective(PI / 5.0, width / height, 0.1, 5000);
 
   shapes.push(new Icosahedron("Line", new p5.Vector(), 303));
   shapes.push(new Icosahedron("Face", new p5.Vector(), 300));
@@ -50,17 +52,17 @@ function setup() {
   gl = this.canvas.getContext("webgl");
   program = createShader(vert, frag);
 
-  for (let i = 0; i < 200; i++) {
-    particles.push(
-      new p5.Vector(random(-500, 500), random(-500, 500), random(-500, 500))
-    );
-  }
   slideList = getTextSlideList();
+
+  console.log(resolutionRatio);
 }
 
 function windowResized() {
   resizingSetting.frameCount = frameCount;
   resizingSetting.isResizing = true;
+  resolutionRatio = (innerWidth * innerHeight) / (1080 * 1920);
+  pg.perspective(PI / 5.0, width / height, 0.1, 7000 * resolutionRatio);
+  console.log(resolutionRatio);
 }
 
 function resize() {
@@ -138,17 +140,28 @@ var transitionRatio = 1;
 
 var target_sc = null;
 function mouseWheel(event) {
-  if (!isStarted) {
+  if (
+    (!isStarted && window.scrollY == 0) ||
+    (isFinished && event.delta < 0 && window.scrollY == 0)
+  ) {
     startIntro();
+
+    if (isFinished) target_sc = (slideList.length - 2) * innerHeight;
   }
   if (!target_sc && !isFinished) {
-    maxsc = innerHeight * slideList.length * 2;
-    if (event.delta > 0) sc += event.delta;
+    maxsc = innerHeight * slideList.length;
+    sc += event.delta;
     if (sc < 0) sc = 0;
     else if (sc > maxsc) sc = maxsc;
 
-    if (event.delta > 10)
-      target_sc = floor((sc + innerHeight) / innerHeight) * innerHeight;
+    if (abs(event.delta) > 10) {
+      target_sc =
+        (sc + innerHeight * (event.delta / abs(event.delta))) / innerHeight;
+      if (sc % innerHeight > innerHeight / 2)
+        target_sc = ceil(target_sc) * innerHeight;
+      else target_sc = floor(target_sc) * innerHeight;
+    }
+    if (target_sc < 0) target_sc = 0;
   }
 }
 
@@ -195,9 +208,6 @@ function scroll_setting() {
   } else {
     transitionRatio = 0;
   }
-
-  console.log(transitionRatio);
-
   if (slideCount >= slideList.length - 1) finishIntro();
 }
 
@@ -206,8 +216,8 @@ var tr = 0;
 var gap = 0;
 var angle = 0;
 function cameraMoving() {
-  shapes[0].position.x = (-gap * innerWidth) / 3;
-  shapes[1].position.x = (gap * innerWidth) / 3;
+  shapes[0].position.x = -gap * resolutionRatio * 700;
+  shapes[1].position.x = gap * resolutionRatio * 700;
 
   rotating = (rotating + 0.01) % (Math.PI * 2);
   shapes[0].rotation.x = rotating;
@@ -215,8 +225,8 @@ function cameraMoving() {
 
   shapes[0].rotation.y = gap * PI + rotating;
   shapes[1].rotation.y = gap * PI + rotating;
-  cameraPos.x = cos(angle + HALF_PI) * (innerWidth * 1.5);
-  cameraPos.z = sin(angle + HALF_PI) * (innerWidth * 1.5);
+  cameraPos.x = cos(angle + HALF_PI) * 2200;
+  cameraPos.z = sin(angle + HALF_PI) * 2200;
 }
 
 function explosion() {
@@ -256,10 +266,10 @@ function getTextSlideList() {
     }),
     new shapeSlide({
       gap: 1,
-      angle: -HALF_PI,
+      angle: HALF_PI,
       hide: "Line",
       lineRatio: 1,
-      faceRatio: 1
+      faceRatio: 0
     }),
 
     new textSlide(
@@ -285,15 +295,15 @@ function getTextSlideList() {
         )
       ],
       "ver",
-      { gap: 1, angle: -HALF_PI, hide: "Line", lineRatio: 1, faceRatio: 1 }
+      { gap: 1, angle: HALF_PI, hide: "Line", lineRatio: 1, faceRatio: 0 }
     ),
 
     new shapeSlide({
       gap: 1,
-      angle: HALF_PI,
+      angle: -HALF_PI,
       hide: "Face",
-      lineRatio: 1,
-      faceRatio: 0
+      lineRatio: 0,
+      faceRatio: 1
     }),
 
     new textSlide(
@@ -326,7 +336,7 @@ function getTextSlideList() {
         )
       ],
       "ver",
-      { gap: 1, angle: HALF_PI, hide: "Face", lineRatio: 1, faceRatio: 0 }
+      { gap: 1, angle: -HALF_PI, hide: "Face", lineRatio: 0, faceRatio: 1 }
     ),
 
     new shapeSlide({
