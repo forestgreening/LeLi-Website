@@ -275,8 +275,8 @@ function getTextSlideList() {
     new textSlide(
       [
         new SlideText("Are You LeLi ?", "Montserrat", 50, NORMAL, 0, true),
-        new SlideText("to experience", "Montserrat", 30, BOLD, 81, false),
-        new SlideText("new paradime shift", "Montserrat", 30, BOLD, 0, false),
+        new SlideText("To experience", "Montserrat", 30, BOLD, 81, false),
+        new SlideText("New Paradime Shift", "Montserrat", 30, BOLD, 0, false),
         new SlideText(
           "레리는  새로운 패러다임의 혁신기술인 블록체인 기술을 기반으로협업,",
           "Noto Sans KR",
@@ -310,14 +310,14 @@ function getTextSlideList() {
       [
         new SlideText("We Are LeLi !", "Montserrat", 50, NORMAL, 0, true),
         new SlideText(
-          "to build human-centered",
+          "To build Human-Centered",
           "Montserrat",
           30,
           BOLD,
           81,
           false
         ),
-        new SlideText("smartcity", "Montserrat", 30, BOLD, 0, false),
+        new SlideText(" Smart City", "Montserrat", 30, BOLD, 0, false),
         new SlideText(
           "레리는 사람들이 거주하는 도시, 건축의 환경이  사람들의 삶을 우선시 하는 환경으로 거듭나고,",
           "Noto Sans KR",

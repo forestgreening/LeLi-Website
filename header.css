@@ -9,11 +9,12 @@
   align-items: center;
   color: #ffffff;
   padding: 0 60px;
-  /* background: rgba(0, 0, 0, 0.8); */
+  background-color: black;
 }
 
 .mainNav__logo {
   font-weight: 800;
+  font-family: Roboto;
   letter-spacing: 1;
   font-size: 24px;
 }
